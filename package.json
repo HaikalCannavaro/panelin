@@ -1,0 +1,17 @@
+{
+  "name": "panelin",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Simulasi PLTS atap yang transparan, berdasarkan SRS dan SDD proyek Panelin.",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.js",
+    "check": "node --check src/energy-series.js && node --check src/geo-production.js && node --check src/sun-model.js && node --check src/roof-model.js && node --check src/roof-renderer.js && node --check src/roof-view.js && node --check src/map-model.js && node --check src/map-picker.js && node --check src/form-helper.js && node --check src/app.js && node --check src/domain.js && node --check src/worker.js && node --check server.mjs",
+    "build": "node scripts/build-static.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

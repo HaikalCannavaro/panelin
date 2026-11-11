@@ -1,0 +1,2 @@
+import {simulate,buildSnapshot,replaySnapshot} from './domain.js';
+self.onmessage=async({data})=>{const {id,action,input}=data;try{let result;if(action==='snapshot')result=await buildSnapshot(input);else if(action==='replay')result=await replaySnapshot(input);else result=simulate(input);self.postMessage({id,result});}catch(error){self.postMessage({id,error:{message:error.message,errors:error.errors||[],code:error.code||'CALCULATION_ERROR'}});}};
